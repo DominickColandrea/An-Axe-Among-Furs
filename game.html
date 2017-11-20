@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>An Axe Among Furs</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<meta name="description" content="A Zelda inspired experience with a twist." />
+	<meta name="keywords" content="game, adventure game," /> <!-- add more -->
+
+	<link rel="shortcut icon" href="assets/head.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="game.css">
+	<script src="controls.js"></script>
+	<script src="imgPreload.js"></script>
+	<script src="musicControl.js"></script>
+	<script src="game-min.js"></script> <!-- game-min -->
+</head>
+<body>
+<audio id="main" class="music" volume="0.8" loop>
+        <source src="music/main.wav" type="audio/wav"/>
+        <source src="music/main.ogg" type="audio/ogg"/>
+        <source src="music/main.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="main2" class="music" volume="0.8" loop>
+        <source src="music/main2.wav" type="audio/wav"/>
+        <source src="music/main2.ogg" type="audio/ogg"/>
+        <source src="music/main2.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="main3" class="music" volume="0.8" loop>
+        <source src="music/main3.wav" type="audio/wav"/>
+        <source src="music/main3.ogg" type="audio/ogg"/>
+        <source src="music/main3.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="wind1" class="sfx" volume="1.0" loop>
+        <source src="sfx/wind1.wav" type="audio/wav"/>
+        <source src="sfx/wind1.ogg" type="audio/ogg"/>
+        <source src="sfx/wind1.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="bossEnter" class="sfx" volume="1.0">
+        <source src="sfx/bossEnter.wav" type="audio/wav"/>
+        <source src="sfx/bossEnter.ogg" type="audio/ogg"/>
+        <source src="sfx/bossEnter.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="cut" class="sfx" volume="1.0">
+        <source src="sfx/cut.wav" type="audio/wav"/>
+        <source src="sfx/cut.ogg" type="audio/ogg"/>
+        <source src="sfx/cut.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="miss" class="sfx" volume="1.0">
+        <source src="sfx/miss.wav" type="audio/wav"/>
+        <source src="sfx/miss.ogg" type="audio/ogg"/>
+        <source src="sfx/miss.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="dink" class="sfx" volume="1.0">
+        <source src="sfx/dink.wav" type="audio/wav"/>
+        <source src="sfx/dink.ogg" type="audio/ogg"/>
+        <source src="sfx/dink.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="grassStepsZ" class="sfx" volume="1.0" loop>
+        <source src="sfx/grassStepsZ.wav" type="audio/wav"/>
+        <source src="sfx/grassStepsZ.ogg" type="audio/ogg"/>
+        <source src="sfx/grassStepsZ.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="woodStepsZ" class="sfx" volume="1.0" loop>
+        <source src="sfx/woodStepsZ.wav" type="audio/wav"/>
+        <source src="sfx/woodStepsZ.ogg" type="audio/ogg"/>
+        <source src="sfx/woodStepsZ.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveStepsZ" class="sfx" volume="1.0" loop>
+        <source src="sfx/caveStepsZ.wav" type="audio/wav"/>
+        <source src="sfx/caveStepsZ.ogg" type="audio/ogg"/>
+        <source src="sfx/caveStepsZ.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="bearSteps" class="sfx" volume="1.0">
+        <source src="sfx/bearSteps.wav" type="audio/wav"/>
+        <source src="sfx/bearSteps.ogg" type="audio/ogg"/>
+        <source src="sfx/bearSteps.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="bearScream" class="sfx" volume="1.0">
+        <source src="sfx/bearScream.wav" type="audio/wav"/>
+        <source src="sfx/bearScream.ogg" type="audio/ogg"/>
+        <source src="sfx/bearScream.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="hitZ" class="sfx" volume="1.0">
+        <source src="sfx/hitZ.wav" type="audio/wav"/>
+        <source src="sfx/hitZ.ogg" type="audio/ogg"/>
+        <source src="sfx/hitZ.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="death" class="sfx" volume="1.0">
+        <source src="sfx/death.wav" type="audio/wav"/>
+        <source src="sfx/death.ogg" type="audio/ogg"/>
+        <source src="sfx/death.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="deathZ" class="sfx" volume="1.0">
+        <source src="sfx/deathZ.wav" type="audio/wav"/>
+        <source src="sfx/deathZ.ogg" type="audio/ogg"/>
+        <source src="sfx/deathZ.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="revive" class="sfx" volume="1.0">
+        <source src="sfx/revive.wav" type="audio/wav"/>
+        <source src="sfx/revive.ogg" type="audio/ogg"/>
+        <source src="sfx/revive.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="logGet" class="sfx" volume="1.0">
+        <source src="sfx/logGet.wav" type="audio/wav"/>
+        <source src="sfx/logGet.ogg" type="audio/ogg"/>
+        <source src="sfx/logGet.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="transition" class="sfx" volume="1.0">
+        <source src="sfx/transition.wav" type="audio/wav"/>
+        <source src="sfx/transition.ogg" type="audio/ogg"/>
+        <source src="sfx/transition.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="enemyDeathD" class="sfx" volume="1.0">
+        <source src="sfx/enemyDeathD.wav" type="audio/wav"/>
+         <source src="sfx/enemyDeathD.ogg" type="audio/ogg"/>
+        <source src="sfx/enemyDeathD.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="enemyDeathS" class="sfx" volume="1.0">
+        <source src="sfx/enemyDeathS.wav" type="audio/wav"/>
+         <source src="sfx/enemyDeathS.ogg" type="audio/ogg"/>
+        <source src="sfx/enemyDeathS.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="bearDeath" class="sfx" volume="1.0">
+        <source src="sfx/bearDeath.wav" type="audio/wav"/>
+         <source src="sfx/bearDeath.ogg" type="audio/ogg"/>
+        <source src="sfx/bearDeath.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="laughTube" class="sfx" volume="1.0">
+        <source src="sfx/laughTube.wav" type="audio/wav"/>
+         <source src="sfx/laughTube.ogg" type="audio/ogg"/>
+        <source src="sfx/laughTube.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveSFX1" class="sfx" volume="0.3">
+        <source src="sfx/caveSFX1.wav" type="audio/wav"/>
+         <source src="sfx/caveSFX1.ogg" type="audio/ogg"/>
+        <source src="sfx/caveSFX1.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveSFX2" class="sfx" volume="0.3">
+        <source src="sfx/caveSFX2.wav" type="audio/wav"/>
+         <source src="sfx/caveSFX2.ogg" type="audio/ogg"/>
+        <source src="sfx/caveSFX2.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveSFX3" class="sfx" volume="0.3">
+        <source src="sfx/caveSFX3.wav" type="audio/wav"/>
+         <source src="sfx/caveSFX3.ogg" type="audio/ogg"/>
+        <source src="sfx/caveSFX3.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveSFX4" class="sfx" volume="0.3">
+        <source src="sfx/caveSFX4.wav" type="audio/wav"/>
+         <source src="sfx/caveSFX4.ogg" type="audio/ogg"/>
+        <source src="sfx/caveSFX4.mp3" type="audio/mp3"/>
+</audio>
+
+<audio id="caveSFX5" class="sfx" volume="0.3">
+        <source src="sfx/caveSFX5.wav" type="audio/wav"/>
+         <source src="sfx/caveSFX5.ogg" type="audio/ogg"/>
+        <source src="sfx/caveSFX5.mp3" type="audio/mp3"/>
+</audio>
+
+<canvas id="back" width="800px" height="600px"></canvas>
+<canvas id="eLayer" width="800px" height="600px"></canvas>
+<canvas id="atk" width="800px" height="600px"></canvas>
+<canvas id="eOVERLAY" width="800px" height="600px"></canvas>
+<canvas id="logman" width="800px" height="600px"></canvas>
+<canvas id="canvas" width="800px" height="600px"></canvas>
+<canvas id="enemyTopLayer" width="800px" height="600px"></canvas>
+<canvas id="layers" width="800px" height="600px"></canvas>
+<canvas id="ui" width="800px" height="600px"></canvas>
+<canvas id="title" width="800px" height="600px"></canvas>
+</body>
+</html>
