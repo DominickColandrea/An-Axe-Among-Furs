@@ -1,0 +1,120 @@
+body{
+	background: black;
+}
+
+#back{
+	background: url('assets/bg1.png');
+	width:800px;
+	height:600px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -300px;
+}
+
+#eLayer{
+	width:800px;
+	height:600px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -300px;
+}
+
+#atk{
+@extend #eLayer;
+}
+
+#eOVERLAY{
+@extend #eLayer;
+}
+
+#logman{
+	background: url("assets/logman.png");
+@extend #eLayer;
+	opacity: 0;
+}
+
+#canvas{
+@extend #eLayer;
+}
+
+#enemyTopLayer{
+@extend #eLayer;
+}
+
+#layers{
+@extend #eLayer;
+}
+
+#ui{
+	background: url('assets/controls.png');
+@extend #eLayer;
+}
+
+#title{
+	background-color: black;
+	background: url('assets/startScreen.png');
+@extend #eLayer;
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes fadeIN {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@keyframes fadeLong {
+  0% { opacity: 1 }
+  70% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@keyframes fadeLog {
+  0% { opacity: 0 }
+  30% { opacity: 1 }
+  70% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(4px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-8px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+@keyframes shakeSlow {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
