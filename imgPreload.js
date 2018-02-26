@@ -9,7 +9,7 @@ preload( //do not move positions, just add on
 
     "assets/ZL.png",//zack
     "assets/ZR.png",
-    "assets/zF1.png",
+    "assets/ZF1.png",
     "assets/ZB.png",
     "assets/ZLsheet.png",//animations
     "assets/ZRsheet.png",
